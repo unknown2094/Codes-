@@ -1,0 +1,18 @@
+# Task 1: Square a number using a lambda function
+square = lambda x: x ** 2
+num = int(input("Enter a number to find its square: "))
+print(f"The square of {num} is {square(num)}")
+
+# Task 2: Sum digits of a five-digit number using a global variable
+total = 0  # Global variable to store the sum
+
+def sum_digits(number):
+    global total
+    total = sum(int(digit) for digit in str(number))
+
+five_digit = input("\nEnter a five-digit number: ")
+if five_digit.isdigit() and len(five_digit) == 5:
+    sum_digits(five_digit)
+    print(f"Sum of digits of {five_digit} is {total}")
+else:
+    print("Invalid input. Please enter a five-digit number.")
