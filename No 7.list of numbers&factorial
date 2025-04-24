@@ -1,0 +1,40 @@
+# Task 1: Search for a number in a list and display its position
+
+# Define a list of integers
+numbers = [10, 20, 30, 40, 50, 60, 70]
+
+# Prompt the user to enter a number to search
+user_input = int(input("Enter a number to search in the list: "))
+
+# Initialize a flag to track if the number is found
+found = False
+
+# Iterate through the list to find the number
+for index in range(len(numbers)):
+    if numbers[index] == user_input:
+        print(f"Number found at position {index}")
+        found = True
+        break  # Exit the loop once the number is found
+
+# If the number is not found in the list
+if not found:
+    print("Number not found in the list.")
+
+# Task 2: Calculate the factorial of a number using recursion
+
+# Define a recursive function to calculate factorial
+def factorial(n):
+    if n == 0 or n == 1:
+        return 1  # Base case: factorial of 0 or 1 is 1
+    else:
+        return n * factorial(n - 1)  # Recursive call
+
+# Prompt the user to enter a number to calculate its factorial
+num = int(input("\nEnter a number to find its factorial: "))
+
+# Check if the number is negative
+if num < 0:
+    print("Factorial is not defined for negative numbers.")
+else:
+    # Calculate and display the factorial
+    print(f"Factorial of {num} is {factorial(num)}")
