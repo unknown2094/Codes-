@@ -1,0 +1,25 @@
+import os
+import shutil
+
+# 1. Create a text file and write initial data
+file_path = "myfile.txt"
+with open(file_path, "w") as f:
+    f.write("Hello, this is the first line.\n")
+
+# 2. Append new data to the file
+with open(file_path, "a") as f:
+    f.write("This is an added line.\n")
+
+# 3. Read the file
+with open(file_path, "r") as f:
+    content = f.read()
+    print("File Content:\n", content)
+
+# 4. Change location of the file (move it)
+new_location = "movedfile.txt"  # You can specify a folder like "new_folder/movedfile.txt"
+shutil.move(file_path, new_location)
+print(f"File moved to: {new_location}")
+
+# 5. Delete the file
+os.remove(new_location)
+print("File deleted.")
